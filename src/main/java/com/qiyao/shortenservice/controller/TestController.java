@@ -1,6 +1,10 @@
 package com.qiyao.shortenservice.controller;
 
+import com.qiyao.shortenservice.dao.TestDao;
+import com.qiyao.shortenservice.model.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -11,7 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @Author LinQi
  */
 @RestController
+@RequestMapping("/test")
 public class TestController {
+    @Autowired
+    private TestDao testDao;
+    @GetMapping("/dao-test")
+    public Test daoTest() {
+        return testDao.save(Test.builder().name("test").build());
+    }
+
 
     @GetMapping("/hello")
     public String hello() {
