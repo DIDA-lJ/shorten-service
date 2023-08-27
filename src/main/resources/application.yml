@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: shorten-service
+
+
+server:
+  port: 8888
