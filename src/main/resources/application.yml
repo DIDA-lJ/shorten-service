@@ -1,6 +1,27 @@
 spring:
   application:
     name: shorten-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/shortenservice?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+  jpa:
+    hibernate:
+      # 上线的时候需要关闭
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        # 开发过程中可以打开
+        format_sql: true
+        show_sql: true
+
 
 
 server:
