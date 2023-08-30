@@ -11,6 +11,10 @@ import org.springframework.data.repository.CrudRepository;
  * @Author LinQi
  */
 public interface UrlMapDao extends CrudRepository<UrlMap, Long> {
-
+    /**
+     * 通过长链接主键 查找 UrlMap 实体类
+     * @param longUrl
+     * @return
+     */
     UrlMap findFirstByLongUrl(String longUrl);
 }

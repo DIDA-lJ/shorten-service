@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Optional;
 
 /**
  * @ClassName UrlMapService
@@ -29,6 +30,7 @@ public class UrlMapServiceImpl implements UrlMapService {
 
     /**
      * 为长链接创建对应的键值
+     *
      * @param longUrl 需要进行短链接 key 编码的长链接
      * @return 短链接的键值
      */
@@ -45,5 +47,16 @@ public class UrlMapServiceImpl implements UrlMapService {
             log.info("create urlMap:{}", urlMap);
         }
         return Base62Utils.idToShortKey(urlMap.getId());
+    }
+
+    /**
+     * 短链接重定向开发
+     * @param shortKey 需要进行解码的短链接 Key 值
+     * @return 对应的长链接
+     */
+    @Override
+    public Optional<String> decode(String shortKey) {
+        long id = Base62Utils.shortKeyToId(shortKey);
+        return urlMapDao.findById(id).map(UrlMap::getLongUrl);
     }
 }
