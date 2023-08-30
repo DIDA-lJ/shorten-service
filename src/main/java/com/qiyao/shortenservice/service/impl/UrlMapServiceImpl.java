@@ -1,9 +1,13 @@
 package com.qiyao.shortenservice.service.impl;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.qiyao.shortenservice.dao.UrlMapDao;
 import com.qiyao.shortenservice.model.UrlMap;
 import com.qiyao.shortenservice.service.UrlMapService;
 import com.qiyao.shortenservice.utils.Base62Utils;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +31,27 @@ public class UrlMapServiceImpl implements UrlMapService {
      */
     @Autowired
     private UrlMapDao urlMapDao;
+    /**
+     * 缓存对象注入
+     */
+    private LoadingCache<String, String> loadingCache;
+
+    @PostConstruct
+    public void init() {
+        CacheLoader<String, String> cacheLoader = new CacheLoader<>() {
+            @Override
+            public String load(String shortKey) {
+                long id = Base62Utils.shortKeyToId(shortKey);
+                log.info("Loading cache {}", shortKey);
+                return urlMapDao.findById(id).map(UrlMap::getLongUrl).orElse(null);
+            }
+        };
+
+        loadingCache = CacheBuilder.newBuilder()
+                // 设置最大缓存大小
+                .maximumSize(100000)
+                .build(cacheLoader);
+    }
 
     /**
      * 为长链接创建对应的键值
@@ -51,12 +76,12 @@ public class UrlMapServiceImpl implements UrlMapService {
 
     /**
      * 短链接重定向开发
+     *
      * @param shortKey 需要进行解码的短链接 Key 值
      * @return 对应的长链接
      */
     @Override
     public Optional<String> decode(String shortKey) {
-        long id = Base62Utils.shortKeyToId(shortKey);
-        return urlMapDao.findById(id).map(UrlMap::getLongUrl);
+        return  Optional.ofNullable(loadingCache.getUnchecked(shortKey));
     }
 }
