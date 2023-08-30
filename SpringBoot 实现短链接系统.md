@@ -10,7 +10,8 @@
 
 短链接系统是一种将长网址转化为短网址的服务，旨在缩短 URL 并且提供友好的链接形式，长网址可能包含大量字符，不方便分享、输入或记忆，而短链接则可以将长网址映射到短字符串，使得链接更加简洁和方便使用。
 
-![image-20230827135641221](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230827135641221.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/1b28cead-959f-4143-97a7-07cf90ce3255)
+
 
 ### 短链接系统的优势
 
