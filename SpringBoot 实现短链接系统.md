@@ -281,8 +281,8 @@ public class ResultUtils {
 ------
 
 ### 场景分析
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/c581e0c4-f74b-4570-b3f6-990327ad2bde)
 
-![image-20230828182410400](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230828182410400.png)
 
 #### 功能
 
@@ -350,7 +350,8 @@ public class ResultUtils {
 
 #### 随机数
 
-![image-20230828212552687](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230828212552687.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/0ae2bb93-91dd-46f2-a665-d53f3c40fe82)
+
 
 - 优点：实现简单
 - 缺点：数据越多，实现越慢
@@ -362,7 +363,8 @@ public class ResultUtils {
 
 #### ID 自增 + base 62
 
-![image-20230828212814187](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230828212814187.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/2049f81d-bffa-401d-89fe-b1a7460f6ee1)
+
 
 - 优点：效率高
 
@@ -835,7 +837,8 @@ GET http://127.0.0.1:8888/urlmap/000001
 <> 2023-08-29T183458.200.html 
 ```
 
-![image-20230829184055478](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230829184055478.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/4c7325a5-bc8e-4172-a1b2-d925b9ba2a4c)
+
 
 此处如果返回成功的话,会返回一个百度的 HTML ,这里就不做展示
 
@@ -847,7 +850,8 @@ GET http://localhost:8888/urlmap/100092
 <> 2023-08-29T184324.200.txt
 ```
 
-![image-20230829184354396](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230829184354396.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/536ce9ed-d6e6-4b92-a1b6-5b6b355150ac)
+
 
 ### 定时任务清理过期数据
 
@@ -1000,7 +1004,8 @@ Application ---> cache ---> DB
 
 #### 分布式缓存
 
-![image-20230830164501286](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830164501286.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/dc9720d9-83b9-493b-b0e1-d827d7b38049)
+
 
 1. **概念**：分布式缓存是一种将缓存数据分布在多个服务器节点上的缓存系统，用于存储和管理大量数据
 2. **优点**：
@@ -1014,7 +1019,8 @@ Application ---> cache ---> DB
 
 - #### 本地缓存
 
-- ![image-20230830170212088](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830170212088.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/3639368f-f1d4-4b25-a2f7-70937a2fcc24)
+
 
 1. 概念：本地缓存是将换出数据存储在应用程序的本地内存中，用于临时保存常用的数据。
 2. 优点：
@@ -1032,7 +1038,8 @@ Application ---> cache ---> DB
 
 ### 高性能本地缓存 Guava Cache 介绍
 
-![image-20230830171325904](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830171325904.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/8b5f1bd4-44c9-4331-a7d1-981227768c85)
+
 
 #### 本地缓存的使用案例
 
@@ -1198,23 +1205,28 @@ GET http://127.0.0.1:8888/urlmap/0000092
 
 ### 系统提速方案二：异地多活
 
-![image-20230830174106189](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830174106189.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/1d8ec486-9345-4fc4-a4a0-b773e11de419)
 
-![image-20230830174739136](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830174739136.png)
 
-![image-20230830174821302](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830174821302.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/32d936e3-e286-443e-b76d-a026ea49088c)
+
+
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/0998b35b-08d2-4a31-90dc-16d9d22792d2)
+
 
 ### 系统扩展方案：分库分表分析与设计
 
-![image-20230830175306955](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830175306955.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/b9e5bf9f-157e-4d0c-8cec-198df750beb4)
 
 #### 如何选取合理的 shardingKey
 
-![image-20230830175516368](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830175516368.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/83b8b072-21d3-40ee-8dd0-3dbae535ac60)
+
 
 #### 基因法选取 shardingKey
 
-![image-20230830175814114](C:\Users\Lenovo2022\AppData\Roaming\Typora\typora-user-images\image-20230830175814114.png)
+![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/c918f5bf-baf5-40a9-a2c8-49b3957623a2)
+
 
 
 
