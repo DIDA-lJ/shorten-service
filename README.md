@@ -13,10 +13,11 @@
 
 
 ## 使用技术栈
-编程语言：Java <br>
-使用技术：Spring Boot 3.1.0 + JPA + MySQL + Guava + Junit 5 + Lombok + Druid 数据库连接池 <br>
-描述：项目采用纯后端的方式实现，没有前端 <br>
-
+<ul>
+<li>编程语言：Java </li>
+<li>使用技术：Spring Boot 3.1.0 + JPA + MySQL + Guava + Junit 5 + Lombok + Druid 数据库连接池 </li>
+<li> 描述：项目采用纯后端的方式实现，没有前端 </li>
+</ul>
 
 ## 项目目录
 ![image](https://github.com/DIDA-lJ/shorten-service/assets/97254796/04aea73d-d1d9-472e-862d-04db33f8a8d3)
