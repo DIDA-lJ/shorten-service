@@ -13,9 +13,9 @@
 
 
 ## 使用技术栈
-编程语言：Java
-使用技术：Spring Boot 3.1.0 + JPA + MySQL + Guava + Junit 5 + Lombok + Druid 数据库连接池
-描述：项目采用纯后端的方式实现，没有前端
+编程语言：Java <br>
+使用技术：Spring Boot 3.1.0 + JPA + MySQL + Guava + Junit 5 + Lombok + Druid 数据库连接池 <br>
+描述：项目采用纯后端的方式实现，没有前端 <br>
 
 
 ## 项目目录
